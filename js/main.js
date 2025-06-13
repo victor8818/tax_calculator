@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const superContributions = parseFloat(document.getElementById("superContributions").value || 0);
     const isMedicareExempt = document.getElementById("isMedicareExempt").checked;
     const hasHELP = document.getElementById("hasHELP").checked;
+    const isPAYG = document.getElementById("isPAYG").checked;
 
     const result = calculateTotalTax({
       income,
@@ -18,8 +19,12 @@ document.addEventListener("DOMContentLoaded", () => {
       otherDeductions,
       superContributions,
       isMedicareExempt,
-      hasHELP
+      hasHELP,
+      isPAYG
     });
+
+    const taxResultLabel = result.taxDue < 0 ? "Tax Rebate" : "Tax Payable";
+    const taxResultValue = Math.abs(result.taxDue).toFixed(2);
 
     resultDiv.innerHTML = `
       <h2 class="font-bold text-xl mt-4">Results</h2>
@@ -27,7 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
       <p>Income Tax: $${result.incomeTax.toFixed(2)}</p>
       <p>Medicare Levy: $${result.medicareLevy.toFixed(2)}</p>
       <p>HELP Repayment: $${result.helpRepayment.toFixed(2)}</p>
-      <p class="font-semibold">Total Payable: $${result.totalTax.toFixed(2)}</p>
+      <p>Total Payable: $${result.totalTax.toFixed(2)}</p>
+      <p>Estimated PAYG Withheld: $${result.paygWithheld.toFixed(2)}</p>
+      <p class="font-semibold">${taxResultLabel}: $${taxResultValue}</p>
     `;
   });
 });
