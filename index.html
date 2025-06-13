@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Australian Tax Calculator</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="js/taxLogic.js"></script>
+  <script defer src="js/main.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 py-10">
+  <div class="max-w-xl mx-auto bg-white p-6 rounded-xl shadow-lg">
+    <h1 class="text-2xl font-semibold mb-4">FY 2024–25 Tax Calculator</h1>
+    <form id="tax-form" class="space-y-4">
+      <input id="income" type="number" placeholder="Income" required class="w-full p-2 border rounded" />
+      <input id="workDeductions" type="number" placeholder="Work Deductions" class="w-full p-2 border rounded" />
+      <input id="otherDeductions" type="number" placeholder="Other Deductions" class="w-full p-2 border rounded" />
+      <input id="superContributions" type="number" placeholder="Super Contributions" class="w-full p-2 border rounded" />
+      <div class="flex space-x-4">
+        <label><input type="checkbox" id="isMedicareExempt" /> Medicare Exempt</label>
+        <label><input type="checkbox" id="hasHELP" /> HELP Debt</label>
+      </div>
+      <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded hover:bg-blue-700">
+        Calculate
+      </button>
+    </form>
+    <div id="results" class="mt-6 text-gray-800"></div>
+  </div>
+</body>
+</html>
