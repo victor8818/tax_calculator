@@ -37,14 +37,6 @@ function calculateHELPRepayment(income, hasHELP = false) {
   return income * 0.10;
 }
 
-function estimatePAYGWithheld(income) {
-  if (income <= 18200) return 0;
-  if (income <= 45000) return (income - 18200) * 0.16;
-  if (income <= 135000) return 4288 + (income - 45000) * 0.30;
-  if (income <= 190000) return 31288 + (income - 135000) * 0.37;
-  return 51638 + (income - 190000) * 0.45;
-}
-
 function calculateTotalTax({
   income,
   workDeductions = 0,
@@ -52,13 +44,12 @@ function calculateTotalTax({
   superContributions = 0,
   isMedicareExempt = false,
   hasHELP = false,
-  isPAYG = false
+  paygWithheld = 0
 }) {
   const adjustedIncome = Math.max(income - workDeductions - otherDeductions - superContributions, 0);
   const incomeTax = calculateIncomeTax(adjustedIncome);
   const medicareLevy = calculateMedicareLevy(adjustedIncome, isMedicareExempt);
   const helpRepayment = calculateHELPRepayment(adjustedIncome, hasHELP);
-  const paygWithheld = isPAYG ? estimatePAYGWithheld(adjustedIncome) : 0;
   const totalTax = incomeTax + medicareLevy + helpRepayment;
   const taxDue = totalTax - paygWithheld;
 
