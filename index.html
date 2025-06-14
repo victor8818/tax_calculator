@@ -18,14 +18,24 @@
 <!--       <input id="superContributions" type="number" placeholder="Super Contributions" class="w-full p-2 border rounded" /> -->
       <input type="number" id="paygWithheld" placeholder="PAYG Withheld ($)" class="w-full p-2 border rounded" />
       <div class="flex space-x-4">
-        <label><input type="checkbox" id="isMedicareExempt" /> Medicare Exempt</label>
-        <label><input type="checkbox" id="hasHELP" /> HELP Debt</label>
+        <label><input type="checkbox" id="isMedicareExempt" /> Do you have Medicare Entitlement Statement?</label>
+        <label><input type="checkbox" id="hasHELP" /> Do you have HELP Debt</label>
 <!--         <label class="flex items-center space-x-2"> </label> -->
 
       </div>
-      <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded hover:bg-blue-700">
-        Calculate
-      </button>
+     <div class="flex flex-col sm:flex-row sm:space-x-4">
+  <button type="submit" class="w-full sm:w-1/2 bg-blue-600 text-white p-3 rounded hover:bg-blue-700 mb-2 sm:mb-0">
+    Calculate
+  </button>
+  <a
+    href="https://wa.me/61403485863"
+    target="_blank"
+    class="w-full sm:w-1/2 bg-green-600 text-white text-center p-3 rounded hover:bg-green-700"
+  >
+    Ask Consultant
+  </a>
+</div>
+
      
    </form>
     <div id="results" class="mt-6 text-gray-800"></div>
