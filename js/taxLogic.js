@@ -46,7 +46,7 @@ function calculateTotalTax({
   hasHELP = false,
   paygWithheld = 0
 }) {
-  const adjustedIncome = Math.max(income - workDeductions - otherDeductions - superContributions, 0);
+  const adjustedIncome = Math.max(income - workDeductions - otherDeductions, 0);
   const incomeTax = calculateIncomeTax(adjustedIncome);
   const medicareLevy = calculateMedicareLevy(adjustedIncome, isMedicareExempt);
   const helpRepayment = calculateHELPRepayment(adjustedIncome, hasHELP);
