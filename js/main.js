@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const income = parseFloat(document.getElementById("income").value);
     const workDeductions = parseFloat(document.getElementById("workDeductions").value || 0);
     const otherDeductions = parseFloat(document.getElementById("otherDeductions").value || 0);
-    const superContributions = parseFloat(document.getElementById("superContributions").value || 0);
+    // const superContributions = parseFloat(document.getElementById("superContributions").value || 0);
     const isMedicareExempt = document.getElementById("isMedicareExempt").checked;
     const hasHELP = document.getElementById("hasHELP").checked;
     const paygWithheld = parseFloat(document.getElementById("paygWithheld").value || 0);
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
       income,
       workDeductions,
       otherDeductions,
-      superContributions,
+      // superContributions,
       isMedicareExempt,
       hasHELP,
       paygWithheld
