@@ -41,7 +41,6 @@ function calculateTotalTax({
   income,
   workDeductions = 0,
   otherDeductions = 0,
-  superContributions = 0,
   isMedicareExempt = false,
   hasHELP = false,
   paygWithheld = 0
@@ -63,3 +62,4 @@ function calculateTotalTax({
     taxDue
   };
 }
+
