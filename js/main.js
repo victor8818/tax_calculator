@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
       paygWithheld
     });
 
-    const taxResultLabel = result.taxDue < 0 ? "Estimated Tax Rebate" : "Total Tax Payable";
+    const taxResultLabel = result.taxDue < 0 ? "Estimated Tax Refund" : "Total Tax Payable";
     const taxResultValue = Math.abs(result.taxDue).toFixed(2);
 
     resultDiv.innerHTML = `
